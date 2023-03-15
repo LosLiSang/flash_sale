@@ -29,9 +29,9 @@ public class Swagger2Config {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("接口口文档档")
+        return new ApiInfoBuilder().title("秒杀系统后端Swagger2文档")
                 .contact(new Contact("romeo", "", "2458607905@qq.com"))
-                .description("这是SWAGGER_2生成的接口文档")
+                .description("秒杀系统后端Swagger2文档")
                 .termsOfServiceUrl("NO terms of service")
                 .license("The Apache License, Version 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")

@@ -2,7 +2,7 @@ package org.lisang.flash_sale.service.impl;
 
 import org.lisang.flash_sale.domain.po.SysDictItemPO;
 import org.lisang.flash_sale.mapper.SysDictItemMapper;
-import org.lisang.flash_sale.service.ISysDictItemService;
+import org.lisang.flash_sale.service.SysDictItemService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2023-03-13
  */
 @Service
-public class SysDictItemServiceImpl extends ServiceImpl<SysDictItemMapper, SysDictItemPO> implements ISysDictItemService {
+public class SysDictItemServiceImpl extends ServiceImpl<SysDictItemMapper, SysDictItemPO> implements SysDictItemService {
 
 }

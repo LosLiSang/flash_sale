@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lisang
  * @since 2023-03-13
  */
-public interface IActivityService extends IService<ActivityPO> {
+public interface ActivityService extends IService<ActivityPO> {
 
 }

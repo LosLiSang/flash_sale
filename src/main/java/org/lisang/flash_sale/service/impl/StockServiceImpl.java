@@ -2,7 +2,7 @@ package org.lisang.flash_sale.service.impl;
 
 import org.lisang.flash_sale.domain.po.StockPO;
 import org.lisang.flash_sale.mapper.StockMapper;
-import org.lisang.flash_sale.service.IStockService;
+import org.lisang.flash_sale.service.StockService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2023-03-13
  */
 @Service
-public class StockServiceImpl extends ServiceImpl<StockMapper, StockPO> implements IStockService {
+public class StockServiceImpl extends ServiceImpl<StockMapper, StockPO> implements StockService {
 
 }

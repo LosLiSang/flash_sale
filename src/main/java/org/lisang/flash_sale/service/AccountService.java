@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lisang
  * @since 2023-03-13
  */
-public interface IAccountService extends IService<AccountPO> {
+public interface AccountService extends IService<AccountPO> {
 
 }

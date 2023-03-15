@@ -1,6 +1,6 @@
 package org.lisang.flash_sale.service;
 
-import org.lisang.flash_sale.domain.po.SysFilePO;
+import org.lisang.flash_sale.domain.po.UserPO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lisang
  * @since 2023-03-13
  */
-public interface ISysFileService extends IService<SysFilePO> {
+public interface UserService extends IService<UserPO> {
 
 }

@@ -2,7 +2,7 @@ package org.lisang.flash_sale.service.impl;
 
 import org.lisang.flash_sale.domain.po.UserPO;
 import org.lisang.flash_sale.mapper.UserMapper;
-import org.lisang.flash_sale.service.IUserService;
+import org.lisang.flash_sale.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2023-03-13
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, UserPO> implements IUserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, UserPO> implements UserService {
 
 }

@@ -2,7 +2,7 @@ package org.lisang.flash_sale.service.impl;
 
 import org.lisang.flash_sale.domain.po.ActivityPO;
 import org.lisang.flash_sale.mapper.ActivityMapper;
-import org.lisang.flash_sale.service.IActivityService;
+import org.lisang.flash_sale.service.ActivityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2023-03-13
  */
 @Service
-public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, ActivityPO> implements IActivityService {
+public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, ActivityPO> implements ActivityService {
 
 }

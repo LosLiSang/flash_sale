@@ -1,4 +1,4 @@
-package org.lisang.flash_sale.controller;
+package org.lisang.flash_sale.controller.admin;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +10,10 @@ import org.lisang.flash_sale.controller.base.BaseController;
  * </p>
  *
  * @author lisang
- * @since 2023-03-13
+ * @since 2023-03-14
  */
 @RestController
-@RequestMapping("/activityPO")
-public class ActivityController extends BaseController {
+@RequestMapping("/sysDictItemPO")
+public class SysDictItemAdminController extends BaseController<SysDictItemService, SysDictItemPO> {
 
 }

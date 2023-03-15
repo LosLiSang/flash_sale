@@ -1,5 +1,7 @@
-package org.lisang.flash_sale.controller;
+package org.lisang.flash_sale.controller.admin;
 
+import org.lisang.flash_sale.domain.po.ActivityPO;
+import org.lisang.flash_sale.service.ActivityService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.lisang.flash_sale.controller.base.BaseController;
@@ -13,7 +15,7 @@ import org.lisang.flash_sale.controller.base.BaseController;
  * @since 2023-03-13
  */
 @RestController
-@RequestMapping("/sysDictPO")
-public class SysDictController extends BaseController {
+@RequestMapping("/activityPO")
+public class ActivityController extends BaseController<ActivityService, ActivityPO> {
 
 }

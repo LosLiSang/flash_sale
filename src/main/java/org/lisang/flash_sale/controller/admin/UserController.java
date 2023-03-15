@@ -1,5 +1,7 @@
-package org.lisang.flash_sale.controller;
+package org.lisang.flash_sale.controller.admin;
 
+import org.lisang.flash_sale.domain.po.UserPO;
+import org.lisang.flash_sale.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.lisang.flash_sale.controller.base.BaseController;
@@ -14,6 +16,6 @@ import org.lisang.flash_sale.controller.base.BaseController;
  */
 @RestController
 @RequestMapping("/userPO")
-public class UserController extends BaseController {
+public class UserController extends BaseController<UserService, UserPO> {
 
 }

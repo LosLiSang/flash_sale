@@ -1,6 +1,6 @@
 package org.lisang.flash_sale.service;
 
-import org.lisang.flash_sale.domain.po.SysDictPO;
+import org.lisang.flash_sale.domain.po.StockPO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lisang
  * @since 2023-03-13
  */
-public interface ISysDictService extends IService<SysDictPO> {
+public interface StockService extends IService<StockPO> {
 
 }
