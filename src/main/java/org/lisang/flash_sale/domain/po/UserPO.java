@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.lisang.flash_sale.domain.enums.UserRoleEnum;
 
 /**
  * <p>
@@ -41,7 +42,7 @@ public class UserPO extends BaseModel<UserPO> {
 
     @ApiModelProperty("用户角色")
     @TableField("role")
-    private String role;
+    private UserRoleEnum role;
 
     @Override
     public Serializable pkVal() {

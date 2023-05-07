@@ -10,10 +10,10 @@ import lombok.Data;
 @ApiModel("登录参数")
 public class LoginParam {
 
-    @ApiModelProperty("用户名")
+    @ApiModelProperty(value = "用户名", example = "admin")
     private String username;
 
-    @ApiModelProperty("密码")
+    @ApiModelProperty(value = "密码", example = "123456")
     private String password;
 
 }

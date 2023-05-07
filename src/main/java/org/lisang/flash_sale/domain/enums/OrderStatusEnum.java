@@ -1,10 +1,15 @@
 package org.lisang.flash_sale.domain.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
+
 public enum OrderStatusEnum {
 
-    ADMIN("1", "管理员"), CLIENT("2", "顾客"), RETAILER("3", "商家");
+    CREATED("1", "待支付"),
+    CANCELED("2", "已取消"),
+    PAYED("3", "已支付"),
+    TIMEOUT("4", "支付超时");
 
-
+    @EnumValue
     private final String value;
 
     private final String label;
@@ -14,11 +19,11 @@ public enum OrderStatusEnum {
         this.label = label;
     }
 
-    public String getCode() {
+    public String getValue() {
         return value;
     }
 
-    public String getText() {
+    public String getLabel() {
         return label;
     }
 

@@ -10,7 +10,8 @@
         <result column="update_time" property="updateTime" />
         <result column="create_user_id" property="createUserId" />
         <result column="update_user_id" property="updateUserId" />
-        <result column="stock_id" property="stockId" />
+        <result column="stock_count" property="stockCount" />
+        <result column="sale_count" property="saleCount" />
         <result column="activity_name" property="activityName" />
         <result column="activity_desc" property="activityDesc" />
         <result column="pic_url_list" property="picUrlList" />
@@ -21,6 +22,10 @@
         <result column="activity_status" property="activityStatus" />
     </resultMap>
 
+    <resultMap id="userActivityListVO" type="org.lisang.flash_sale.domain.vo.UserActivityListVO">
+
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
@@ -29,7 +34,22 @@
         update_time,
         create_user_id,
         update_user_id,
-        stock_id, activity_name, activity_desc, pic_url_list, flash_price, origin_price, start_time, end_time, activity_status
+        stock_id, sale_count, activity_name, activity_desc, pic_url_list, flash_price, origin_price, start_time, end_time, activity_status
     </sql>
+
+
+    <select id="pageUserActivityList" resultType="org.lisang.flash_sale.domain.vo.UserActivityListVO">
+        select
+            a.id,
+            a.stock_count,
+            a.activity_name,
+            a.pic_url_list,
+            a.flash_price,
+            a.origin_price,
+            a.start_time,
+            a.end_time
+        from activity a
+        ${ew.customSqlSegment}
+    </select>
 
 </mapper>

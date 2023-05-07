@@ -1,4 +1,4 @@
-package org.lisang.flash_sale.domain.vo;
+package org.lisang.flash_sale.domain.vo.base;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ public class ResultVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private static final Integer CODE = 0;
+    private static final Integer CODE = 200;
 
     private Integer code;
 
@@ -54,9 +54,9 @@ public class ResultVO implements Serializable {
         return new ResultVO(code, msg);
     }
 
-    public static ResultVO ok(String msg) {
-        return new ResultVO(CODE, msg);
-    }
+//    public static ResultVO ok(String msg) {
+//        return new ResultVO(CODE, msg);
+//    }
 
     public static ResultVO ok(Object result) {
         return new ResultVO(CODE, result);

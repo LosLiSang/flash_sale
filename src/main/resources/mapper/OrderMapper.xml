@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lisang.flash_sale.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.lisang.flash_sale.domain.po.OrderPO">
+        <result column="id" property="id" />
+        <result column="del_flag" property="delFlag" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="update_user_id" property="updateUserId" />
+        <result column="user_id" property="userId" />
+        <result column="activity_id" property="activityId" />
+        <result column="pay_status" property="payStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        del_flag,
+        create_time,
+        update_time,
+        create_user_id,
+        update_user_id,
+        user_id, activity_id, pay_status
+    </sql>
+
+    <sql id="selectOrderUserActivityDTO">
+        select `order`.id                 as id,
+               `order`.create_time        as create_time,
+               `order`.pay_status         as pay_status,
+               `activity`.activity_name   as activity_name,
+               `activity`.activity_desc   as activity_desc,
+               `activity`.activity_status as activity_status,
+               `activity`.flash_price as flash_price,
+               `activity`.origin_price as origin_price,
+               `user`.username            as username,
+               `user`.role                as role
+        from `order`
+                 inner join `activity` on `order`.activity_id = `activity`.id
+                 inner join `user` on `order`.user_id = user.id
+            ${ew.customSqlSegment}
+    </sql>
+
+    <select id="pageOrderUserActivityDTO" resultType="org.lisang.flash_sale.domain.dto.OrderUserActivityDTO">
+        <include refid="selectOrderUserActivityDTO" />
+
+
+    </select>
+    <select id="getUserActivityDTOById" resultType="org.lisang.flash_sale.domain.dto.OrderUserActivityDTO">
+        <include refid="selectOrderUserActivityDTO" />
+    </select>
+
+</mapper>

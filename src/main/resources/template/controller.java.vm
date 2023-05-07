@@ -1,5 +1,6 @@
 package ${package.Controller};
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 #if(${restControllerStyle})
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Controller;
 #if(${superControllerClassPackage})
 import ${superControllerClassPackage};
 #end
-
+import org.lisang.flash_sale.domain.po.${entity};
+import org.lisang.flash_sale.service.${table.serviceName};
 /**
  * <p>
  * $!{table.comment} 前端控制器
@@ -20,10 +22,11 @@ import ${superControllerClassPackage};
  */
 #if(${restControllerStyle})
 @RestController
+@Api(tags = "$!{table.comment}模块")
 #else
 @Controller
 #end
-@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/api/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
 #if(${kotlin})
 class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
 

@@ -1,15 +1,16 @@
 package org.lisang.flash_sale.domain.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+
+import lombok.ToString;
 import org.lisang.flash_sale.domain.base.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.lisang.flash_sale.domain.enums.OrderStatusEnum;
 
 /**
  * <p>
@@ -21,7 +22,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("order")
+@TableName("`order`")
+@ToString
 @ApiModel(value = "OrderPO对象", description = "")
 public class OrderPO extends BaseModel<OrderPO> {
 
@@ -36,8 +38,8 @@ public class OrderPO extends BaseModel<OrderPO> {
     private String activityId;
 
     @ApiModelProperty("支付状态")
-    @TableField("pay_state")
-    private String payState;
+    @TableField("pay_status")
+    private OrderStatusEnum payStatus;
 
     @Override
     public Serializable pkVal() {

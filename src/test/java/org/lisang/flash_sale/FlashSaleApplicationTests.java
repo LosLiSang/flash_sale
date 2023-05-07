@@ -1,14 +1,16 @@
 package org.lisang.flash_sale;
 
 import org.junit.jupiter.api.Test;
-import org.lisang.flash_sale.controller.admin.SysDictController;
 import org.lisang.flash_sale.domain.enums.UserRoleEnum;
 import org.lisang.flash_sale.domain.po.SysDictPO;
 import org.lisang.flash_sale.domain.po.UserPO;
 import org.lisang.flash_sale.service.UserService;
+import org.lisang.flash_sale.util.JwtTokenTools;
 import org.lisang.flash_sale.util.SnowFlakeIDTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Map;
 
 @SpringBootTest
 class FlashSaleApplicationTests {
@@ -17,8 +19,6 @@ class FlashSaleApplicationTests {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private SysDictController sysDictController;
     @Test
     void contextLoads() {
     }
@@ -53,6 +53,17 @@ class FlashSaleApplicationTests {
         sysDictPO.setDesc("订单状态");
         sysDictPO.setName("OrderStatus");
         sysDictPO.setId(SnowFlakeIDTools.generateId());
-        sysDictController.create(sysDictPO);
+    }
+
+    @Test
+    void testLogin(){
+
+    }
+
+    @Test
+    void testJwt(){
+        System.out.println(JwtTokenTools.generateToken("123", "admin"));
+        Map claims = JwtTokenTools.getClaims(JwtTokenTools.generateToken("123", "admin"));
+        System.out.println(claims);
     }
 }

@@ -26,5 +26,17 @@
         update_user_id,
         username, phone, password, role
     </sql>
+    <select id="pageUserAccountDTO" resultType="org.lisang.flash_sale.domain.dto.UserAccountDTO">
+        select user.id          as id,
+               user.role        as role,
+               user.username    as username,
+               user.phone       as phone,
+               account.balance  as balance,
+               user.create_time as create_time
+        from user
+                 inner join account on user.id = account.user_id
+            ${ew.customSqlSegment}
+
+    </select>
 
 </mapper>

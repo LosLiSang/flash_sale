@@ -1,10 +1,13 @@
 package org.lisang.flash_sale.domain.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.baomidou.mybatisplus.annotation.IEnum;
 
-public enum UserRoleEnum {
+public enum UserRoleEnum implements IEnum<String> {
 
-    ADMIN("1", "管理员"), CLIENT("2", "顾客"), RETAILER("3", "商家");
+    ADMIN("1", "管理员"),
+    CLIENT("2", "顾客"),
+    RETAILER("3", "商家");
 
     @EnumValue
     private final String value;
@@ -16,11 +19,11 @@ public enum UserRoleEnum {
         this.label = label;
     }
 
-    public String getCode() {
+    public String getValue() {
         return value;
     }
 
-    public String getText() {
+    public String getLabel() {
         return label;
     }
 }

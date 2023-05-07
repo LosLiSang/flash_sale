@@ -40,7 +40,7 @@ public class StockPO extends BaseModel<StockPO> {
     private String picIdList;
 
     @ApiModelProperty("商品描述")
-    @TableField("desc")
+    @TableField("`desc`")
     private String desc;
 
     @Override

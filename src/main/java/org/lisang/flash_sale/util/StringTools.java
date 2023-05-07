@@ -2,6 +2,10 @@ package org.lisang.flash_sale.util;
 
 public class StringTools {
 
+    public static boolean isNullOrBlank(String str){
+        return str == null || "".equals(str);
+    }
+
 
     /**
      * 将驼峰式命名的字符串转换为下划线大写方式。如果转换前的驼峰式命名的字符串为空，则返回空字符串。</br>
